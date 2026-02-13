@@ -76,7 +76,7 @@ inline VOID CORRELATED::Instruction(INS ins, VOID *v)
 inline INT8 * CORRELATED::HistAddress(INS ins)
 {
     ADDRINT ip = INS_Address(ins);
-    return &(_branchHistory[((ip % PCBITS) << PCBITS) + _globalBHist % GBHISTORYSIZE]);
+    return &(_branchHistory[((ip % (((UNIT8) 1) << PCBITS)) << PCBITS) + _globalBHist % GBHISTORYSIZE]);
 }
 
 inline VOID CORRELATED::CondBranch(CORRELATED *cr, INT8 * branchHistory, 
