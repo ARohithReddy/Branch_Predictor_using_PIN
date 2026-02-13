@@ -78,7 +78,7 @@ inline INT8 * BIMODAL::HistAddress(INS ins)
 {
     ADDRINT ip = INS_Address(ins);
     // return &(_branchHistory[(ip / BUNDLESIZE) % TABLESIZE][ip % BUNDLESIZE]);
-    return &(_branchHistory[ip % PCBITS]);
+    return &(_branchHistory[ip % (((UINT8) 1) << PCBITS)]);
 }
 
 inline VOID BIMODAL::CondBranch(BIMODAL *bm, INT8 * branchHistory, 
