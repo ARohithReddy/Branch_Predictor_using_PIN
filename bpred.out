@@ -1,0 +1,21 @@
+
+===== USC EE557 Spring 2026 - Project 1 =====
+Name: Rohith Reddy Appidi, Lalith Kishore Sridhar
+Email: appidi@usc.edu, lsridhar@usc.edu
+
+Always Taken Predictor
+Total Prediction: 83198
+Prediction Rate: 0.406656
+
+2-bit Global Predictor
+Total Prediction: 83198
+Prediction Rate: 0.557105
+
+Bimodal Predictor
+Total Prediction: 83198
+Prediction Rate: 0.794502
+
+Correlated Predictor
+Total Prediction: 83198
+Prediction Rate: 0.85728
+=============================================
