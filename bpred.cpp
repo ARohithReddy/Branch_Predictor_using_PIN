@@ -60,8 +60,8 @@ VOID Fini(INT32 code, VOID *v)
       
     OutFile << endl;
     OutFile << "===== USC EE557 Spring 2026 - Project 1 =====" << endl;
-    OutFile << "Name: " << "Rohith Reddy Appidi" << endl;
-    OutFile << "Email: " << "appidi@usc.edu" << endl;
+    OutFile << "Name: " << "Rohith Reddy Appidi, Lalith Kishore Sridhar" << endl;
+    OutFile << "Email: " << "appidi@usc.edu, lsridhar@usc.edu" << endl;
   
     OutFile << endl;
     OutFile << "Always Taken Predictor" << endl;
