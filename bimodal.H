@@ -43,18 +43,18 @@ class BIMODAL
   private:
     enum 
     {
-        // TABLESIZE = 4096,
+        TABLESIZE = 32,
         // BUNDLESIZE = 16,
         // MAXTHREADS = 100
-        PCBITS = 5
+        // PCBITS = 5
     };
 
     static VOID Instruction(INS ins, VOID *v);
     static VOID CondBranch(BIMODAL *bm, INT8 * branchHistory, VOID * ip,  BOOL taken);
     inline INT8 * HistAddress(INS ins);
 
-    //INT8 _branchHistory[TABLESIZE][BUNDLESIZE];
-    INT8 _branchHistory[(int)(((UINT8) 1) << PCBITS)]; // 2 ^ PCBITS 
+    INT8 _branchHistory[TABLESIZE];
+    //INT8 _branchHistory[(int)(((UINT8) 1) << PCBITS)]; // 2 ^ PCBITS 
     UINT64 _references, _predicts;
 };
 
@@ -78,7 +78,8 @@ inline INT8 * BIMODAL::HistAddress(INS ins)
 {
     ADDRINT ip = INS_Address(ins);
     // return &(_branchHistory[(ip / BUNDLESIZE) % TABLESIZE][ip % BUNDLESIZE]);
-    return &(_branchHistory[ip % (((UINT8) 1) << PCBITS)]);
+    // return &(_branchHistory[ip % (((UINT8) 1) << PCBITS)]);
+   return &(_branchHistory[ip % TABLESIZE];
 }
 
 inline VOID BIMODAL::CondBranch(BIMODAL *bm, INT8 * branchHistory, 
